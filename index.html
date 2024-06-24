@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Ask</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside>
+    <header>
+      <h1 id="animated-title">Let's Ask</h1>
+    </header>
+    <div class="quote-of-the-day">
+      <h2>Quote of the Day</h2>
+      <p id="quote">"Loading quote..."</p>
+    </div>
+    <div class="faq">
+      <h2><a href="#" id="faq-link">FAQ</a></h2>
+    </div>
+    <div class="resources">
+      <h2><a href="#" id="resources-link">Resources</a></h2>
+    </div>
+    <div class="trending-questions">
+      <h2>Trending Questions</h2>
+      <div class="question-groups" id="question-groups">
+      </div>
+    </div>       
+    <div class="theme-switch-container">
+      <label class="switch-label">
+        <input type="checkbox" class="theme-checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </aside>
+  <div class="detail-content" id="detail-content">
+    <button class="close-button" id="close-button">Close</button>
+    <div class="content-body" id="content-body"></div>
+  </div>
+  <main>
+    <div class="chat-container" id="chat-container"></div>
+    <form id="chat-form">
+      <div class="prompt-box">
+        <input name="prompt" placeholder="Let's Chat with LA Bot" type="text" autocomplete="off">
+        <button type="submit">Go</button>
+      </div>
+    </form>
+  </main>
+  <script type="module" src="/main.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>
