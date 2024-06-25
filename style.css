@@ -20,14 +20,15 @@ body {
 }
 
 aside {
-  width: 200px;
-  background: var(--header-background-color);
+  width: 250px;
+  background: linear-gradient(to bottom, #3B3486, #332941);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   animation: slideInLeft 0.5s ease-in-out;
+  border-radius: 0 20px 20px 0;
 }
 
 @keyframes slideInLeft {
@@ -58,13 +59,13 @@ header {
 
 #animated-title {
   display: inline-block;
-  font-size: 2em; /* Adjust size as needed */
+  font-size: 2em;
   font-weight: bold;
-  overflow: hidden; /* Ensures the text is hidden when not fully typed */
-  border-right: .15em solid black; /* The cursor */
-  white-space: nowrap; /* Keeps the text on a single line */
-  margin: 0 auto; /* Adjust as needed */
-  letter-spacing: .15em; /* Adjust as needed */
+  overflow: hidden;
+  border-right: .15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
   animation: typewriter 4s steps(30, end) 1s 1 normal both,
              blink-caret .75s step-end infinite;
 }
@@ -74,25 +75,21 @@ header h1 {
   font-size: 1.5rem;
 }
 
-.quote-of-the-day {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.quote-of-the-day h2 {
-  font-size: 1.2rem;
-}
-
-.faq, .resources {
-  width: 100%;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.faq h2, .resources h2 {
+.quote-of-the-day h2, .faq h2, .resources h2, .trending-questions h2 {
   font-size: 1.2rem;
   margin-bottom: 10px;
+}
+
+.quote-of-the-day h2, .faq h2, .resources h2, .trending-questions h2 {
+  font-size: 1.4rem; /* Increased font size */
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.quote-of-the-day p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-color);
 }
 
 .faq h2 a, .resources h2 a {
@@ -104,36 +101,60 @@ header h1 {
 
 .faq h2 a:hover, .resources h2 a:hover {
   color: var(--button-background);
+  text-decoration: underline;
 }
 
 .question-groups {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .question-group {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .group-title {
-  background-color: #3B3486;
+  background-color: var(--button-background);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
   width: 100%;
   text-align: left;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.group-title:hover {
+  background-color: var(--button-hover-background);
 }
 
 .questions-list {
   display: none;
   list-style-type: none;
   padding: 0;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .questions-list li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.questions-list li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.questions-list li a:hover {
+  color: var(--button-background);
+  background-color: var(--button-hover-background);
 }
 
 .question-group.open .questions-list {
@@ -192,7 +213,7 @@ header h1 {
   border: none; 
   padding: 0;
   margin-top: 20px;
-  left: 15px;
+  margin-left: 10px;
 }
 
 .theme-checkbox::before {
@@ -425,9 +446,53 @@ li a:hover {
 }
 
 .theme-switch-container {
-  position: fixed;
-  bottom: 20px;
-  left: 70px;
+  margin-top: 30px;
+}
+
+.switch-label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--button-background);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
 button {
