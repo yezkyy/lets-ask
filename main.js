@@ -5,7 +5,7 @@ import './style.css';
 // 🔥 FILL THIS OUT FIRST! 🔥
 // 🔥 GET YOUR GEMINI API KEY AT 🔥
 // 🔥 https://g.co/ai/idxGetGeminiKey 🔥
-let API_KEY = 'AIzaSyDVBYq9hdY94IZFOMOcDW_8_lvbEGkmLwo';
+let API_KEY = 'YOUR_API_KEY';
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({
